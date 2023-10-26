@@ -35,7 +35,7 @@
             color: #001f3f; /* Navy Blue */
         }
         .form-group input {
-            width: 100%;
+            width: 94%;
             padding: 8px;
             border: 1px solid #ccc;
             border-radius: 4px;
@@ -55,17 +55,34 @@
             background-color: #003366; /* Darker Navy Blue */
         }
         .login_2{
-            color: #001f3f; /* Navy Blue */
+            color: #001f3f; /* #001f3f */
             flex: 50%;
-            padding: 10px;
-            margin: 20px;
+            margin: 30px;
+            
             font-size: 15px;
             margin-top: 50px;
+            border-left: 2px solid navy;
         }
         .login_1{
             flex: 50%;
         }
+        
     </style>
+     <script>
+        function clearDefaultText(element) {
+            if (element.value == element.defaultValue) {
+                element.value = '';
+                element.classList.remove('default-text');
+            }
+        }
+
+        function restoreDefaultText(element) {
+            if (element.value == '') {
+                element.value = element.defaultValue;
+                element.classList.add('default-text');
+            }
+        }
+    </script>
 </head>
 <body>
     <!-- start of login form -->
@@ -75,17 +92,22 @@
         <form action="login_process.php" method="post">
             <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" id="username" name="username" required>
+                <input type="text" id="username" name="username" value="Enter your username" 
+                    class="default-text" onfocus="clearDefaultText(this)" 
+                    onblur="restoreDefaultText(this)"  required>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="password" value="Enter your password" 
+                    class="default-text" onfocus="clearDefaultText(this)" 
+                    onblur="restoreDefaultText(this)" required>
             </div>
             <div class="form-group">
                 <button type="submit">Login</button>
             </div>
         </form>
     </div>
+    <div class="vertical-line"></div>
     <div class="login_2">
         <h2>Invoice Management System for Bharat Mandir Trust</h2>
     </div>
