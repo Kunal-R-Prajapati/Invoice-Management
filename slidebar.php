@@ -29,10 +29,17 @@
         --tran-05:all 0.5s ease;
        
       }
+      body{
+        height:100vh;
+        background:var(--body-color);
+        transition:var(--tran-02); 
+      }
       
       .header .header-text .name{
-        font-weight:600;
-
+        font-weight:900;
+        font-size:25px;
+        /* margin-bottom:30px; */
+     
       }
       .sidebar{
         position:fixed;
@@ -42,19 +49,26 @@
         width:250px;
         padding:10px 14px;
         background:var(--sidebar-color);
+        transition:var(--tran-05);
       }
       .sidebar .header{
         position:relative;
 
       }
-      body{
-        height:100vh;
-        background:var(--body-color);
+      .sidebar.close{
+        width:88px;
       }
+      .sidebar.close .text{
+        opacity:0;
+      }
+    
       .sidebar .text{
         font-size:20px;
         font-weight:500;
         color:var(--text-color);
+        transition:var(--tran-04);
+        white-space:pre; 
+        opacity:1;
       }
       .header .header-text{
         display:flex;
@@ -64,7 +78,7 @@
         position:absolute;
         top:50%;
         right:-24px;
-        transform:translateY(-50%);
+        transform:translateY(-50%) rotate(180deg);
         height:25px;
         width:25px;
         background:var(--primary-color);
@@ -74,6 +88,10 @@
         border-radius:50%;
         color:var(--sidebar-color);
         font-size:22px;
+        transition:var(--trans-03);
+      }
+      .sidebar.close .header .toggle{
+      transform:translateY(-50%)
       }
       .sidebar li{
         height:50px;
@@ -108,14 +126,14 @@
       .sidebar .search-bar{
         background:var(--primary-color-light);
       }
-      .search-bar input{
+      /* .search-bar input{
         height:100%;
         width:100%;
         outline:none;
         border:none;
         border-radius:6px;
         background:var(--primary-color-light);
-      }
+      } */
       .sidebar li a:hover{
         background:var(--primary-color);
       }
@@ -130,22 +148,9 @@
         flex-direction:column;
         justify-content:space-between
       }
-      .menubar .mode{
-        background:var(--primary-color-light);
-      }
-      .menubar .mode .moon-sun{
-        height:50px;
-        width:60px;
-        display:flex;
-        align-items:center;
-      }
-      .menubar .mode i{
-        position:absolute;
-      }
-      .menubar .mode i .sun{
-        opacity:0;
-      }
+      
       .menubar .mode .toggle-switch{
+        position:absolute;
         display:flex;
         align-items:center;
         justify-content:center;
@@ -172,28 +177,34 @@
         cursor:pointer;
         transform:translateY(50%);
         background:var(--sidebar-color);
+        transition:var(--tran-03);
 
       }
+      body.dark .switch::before{
+        left:20px;
+      }
+
 
 
     </style>
 </head>
-<body>
-    <nav class="sidebar">
+<body >
+    <nav class="sidebar close">
       <header>
         <div class="header">
         <div class=" text header-text">
-            <span class="name">Shri Bharat Mandir School Society</span>
+            <span class="name">Shri Bharat Mandir </span>
+            <span class="name">School Society</span>
         </div>
         <i class="bx bx-chevron-right toggle"></i>
         </div>
      </header>
      <div class="menubar">
       <div class="menu">
-        <li class="search-bar">
+        <!-- <li class="search-bar">
           <i class="bx bx-search icon"></i>
           <input type="search" placeholder="Search.....">
-        </li>
+        </li> -->
         <ul class="menu-link">
           <li class="nav-link">
             <a href="#" ><i class="bx bx-home-alt icon"></i>
@@ -226,21 +237,25 @@
           <span class="text nav-text">Logout</span>
         </a>
       </li>
-      <li class="mode">
-        <div class="moon-sun">
-          <i class="bx bx-moon icon moon"></i>
-          <i class="bx bx-sun icon sun"></i>
-
-        </div>
-        <span class="mode-text text">Dark Mode</span>
-        <div class="toggle-switch">
-          <span class="switch"></span>
-        </div>
-      </li>
+      
      </div>
     </div>
     </nav>
 </body>
-<script type="text/javascript
-"></script>
+
+<script type="text/javascript">
+const body = document.querySelector("body")
+      sidebar = body.querySelector(".sidebar")
+      toggle = body.querySelector(".toggle")
+      searchbar = body.querySelector(".search-bar")
+      modeSwitch = body.querySelector(".toggle-switch")
+      modetext = body.querySelector(".mode-text")
+
+      toggle.addEventListener("click" , () =>{
+        sidebar.classList.toggle("close");
+      })
+                  
+
+
+</script>
 </html>
