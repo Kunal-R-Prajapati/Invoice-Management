@@ -105,10 +105,10 @@
         border-radius:6px;
         transition:var(--tran-04);
       }
-      .sidebar .search-box{
+      .sidebar .search-bar{
         background:var(--primary-color-light);
       }
-      .search-box input{
+      .search-bar input{
         height:100%;
         width:100%;
         outline:none;
@@ -119,7 +119,8 @@
       .sidebar li a:hover{
         background:var(--primary-color);
       }
-      .sidebar li a:hover .icons,
+      
+      .sidebar li a:hover .icon,
       .sidebar li a:hover .text{
         color:var(--sidebar-color); 
       }
