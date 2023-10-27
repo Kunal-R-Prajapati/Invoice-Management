@@ -84,6 +84,7 @@
       }
       .sidebar li .icon{
         font-size:20px;
+        /* margin:10px; */
         min-width:60px;
         display:flex;
         align-items:center;
@@ -194,22 +195,22 @@
         </li>
         <ul class="menu-link">
           <li class="nav-link">
-            <a href="#" ><i class="bx bx-home-alt"></i>
+            <a href="#" ><i class="bx bx-home-alt icon"></i>
             <span class="text nav-text">HOME</span>
           </a>
           </li>
           <li class="nav-link">
-            <a href="#" ><i class="bx bx-store-alt"></i>
+            <a href="#" ><i class="bx bx-store-alt icon"></i>
             <span class="text nav-text">SHOPS</span>
           </a>
           </li>
           <li class="nav-link">
-            <a href="#" ><i class="bx bx-user-circle"></i>
+            <a href="#" ><i class="bx bx-user-circle icon"></i>
             <span class="text nav-text">CUSTOMERS</span>
           </a>
           </li>
           <li class="nav-link">
-            <a href="#" ><i class="bx bx-message-alt-dots"></i>
+            <a href="#" ><i class="bx bx-message-alt-dots icon"></i>
             <span class="text nav-text">INVOICE</span>
           </a>
           
@@ -239,4 +240,6 @@
     </div>
     </nav>
 </body>
+<script type="text/javascript
+"></script>
 </html>
