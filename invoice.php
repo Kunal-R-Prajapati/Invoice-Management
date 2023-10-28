@@ -62,7 +62,12 @@
   
   function getprint()
   {
-    window.print(); 
+    
+    var body = document.getElementById('body').innerHTML;
+    var data = document.getElementById('data').innerHTML;
+    document.getElementById('body').innerHTML = data;
+    window.print();
+    document.getElementById('body').innerHTML = body;
   }
 
   function addbtn()
@@ -121,14 +126,16 @@
 
    $('input[name="cudate"]').val(cdate);
   }
+
+  
   
  </script>
   </head>
-  <body>
+  <body id="body"> 
     <div class="container">
         <div class="row">
             <div class="row mb-3"></div>
-        <div class="card">
+        <div class="card" id="data">
             <div class="card-header text-center">
               <h3>INVOICE</h3>
             </div>
