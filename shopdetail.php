@@ -2,54 +2,84 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Details</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Details</title>
+   <?php include_once("headerlink.php") ?>
+   <link rel="stylesheet" href="./Style/style.css">
 </head>
 
 <body>
-  <!-- <h1></h1> -->
-  <table class="table table-striped table-bordered align-middle">
-    <thead>
-      <tr class="table-dark">
-        <th scope="col">ID</th>
-        <th scope="col">Location</th>
-        <th scope="col">Rent Amount</th>
-        <th scope="col">Rented</th>
-        <th scope="col">Rented To</th>
-      </tr>
-    </thead>
-    <tbody >
-      <tr>
-        <th scope="row">1</th>
-        <td>1</td>
-        <td>RAmJhula</td>
-        <td>₹18000</td>
-        <td>Yes</td>
-        <td>Rohan</td>
+<div class="container text-center">    
+<div class="row">
+    <div class="col col-2">
+<?php include_once('bar.php') ?>
+    </div>
+    <div class="flex-grow-1 col col-10">
+        <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand">Shop Details</a>
+                <div class="d-flex">
+                    <form class="d-flex" role="search">
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        </div>
+                        <button class="btn btn-success" type="submit">ADD</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
 
+        <div class="m-3"></div>
 
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>2</td>
-        <td>City Center</td>
-        <td>₹50000</td>
-        <td>Yes</td>
-        <td>Rohan</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>3</td>
-        <td>Raiwala</td>
-        <td>₹20000</td>
-        <td>Yes</td>
-        <td>Riya</td>
-      </tr>
-    </tbody>
-  </table>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <div class="container">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered align-middle">
+                    <thead>
+                        <tr class="table-dark align-middle">
+                            <th scope="col">ID</th>
+                            <th scope="col">Location</th>
+                            <th scope="col">Rent Amount (in <i class="fa fa-inr" aria-hidden="true"></i> )</th>
+                            <th scope="col">Rented</th>
+                            <th scope="col">Rented To</th>
+                            <th scope="col" style="width:fit-content;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="align-middle">
+                            <th scope="row">1</th>
+                            <td>RAmJhula</td>
+                            <td>₹18000</td>
+                            <td>Yes</td>
+                            <td>Rohan</td>
+                            <td><a href="" class="btn btn-danger me-4"><i class="fa fa-trash"></i></a><a href="" class="btn btn-info"><i class="fa fa-edit"></i></a></td>
+                        </tr>
+                        <tr class="align-middle">
+                            <th scope="row">2</th>
+                            <td>City Center</td>
+                            <td>₹50000</td>
+                            <td>Yes</td>
+                            <td>Rohan</td>
+                            <td><a href="" class="btn btn-danger me-4"><i class="fa fa-trash"></i></a><a href="" class="btn btn-info"><i class="fa fa-edit"></i></a></td>
+                        </tr>
+                        <tr class="align-middle">
+                            <th scope="row">3</th>
+                            <td>Raiwala</td>
+                            <td>₹20000</td>
+                            <td>Yes</td>
+                            <td>Riya</td>
+                            <td><a href="" class="btn btn-danger me-4"><i class="fa fa-trash"></i></a><a href="" class="btn btn-info"><i class="fa fa-edit"></i></a></td>
+                        </tr>    
+                  </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script type="text/javascript" src="./Script/logic.js"></script>
+<?php include_once("footerlink.php") ?>
 </body>
 
 </html>
