@@ -15,7 +15,7 @@
     <div class="col col-2">
 <?php include_once('bar.php') ?>
     </div>
-    <div class="flex-grow-1 col col-10">
+    <div class="col col-10">
         <nav class="navbar bg-body-tertiary">
             <div class="container-fluid">
                 <a class="navbar-brand">Shop Details</a>

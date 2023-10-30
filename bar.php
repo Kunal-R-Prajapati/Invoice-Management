@@ -1,4 +1,4 @@
-    <nav class="sidebar close">
+    <nav class="sidebar close ">
       <header>
         <div class="header">
           <div class=" text header-text">
