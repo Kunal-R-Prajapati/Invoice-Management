@@ -62,7 +62,12 @@
   
   function getprint()
   {
-    window.print(); 
+    
+    var body = document.getElementById('body').innerHTML;
+    var data = document.getElementById('data').innerHTML;
+    document.getElementById('body').innerHTML = data;
+    window.print();
+    document.getElementById('body').innerHTML = body;
   }
 
   function addbtn()
@@ -94,15 +99,43 @@
     }
 
     document.getElementById("stotal").value=sum;
+
+
   }
+
+  $(document).ready( function()
+  {
+    setcurrentdate(); 
+  });
+
+
+  function setcurrentdate()
+  {
+    const date = new Date();
+    console.log(date);
+
+
+    let d=date.getDate();
+    let m=date.getMonth() + 1;
+    let y=date.getFullYear();
+
+    if(d<10) d = '0' + d;
+    if(m<10) m = '0' + m;
+
+    let cdate= y + '-' + m + '-' + d;
+
+   $('input[name="cudate"]').val(cdate);
+  }
+
+  
   
  </script>
   </head>
-  <body>
+  <body id="body"> 
     <div class="container">
         <div class="row">
             <div class="row mb-3"></div>
-        <div class="card">
+        <div class="card" id="data">
             <div class="card-header text-center">
               <h3>INVOICE</h3>
             </div>
@@ -155,7 +188,7 @@
                         <div class="input-group-prepend">
                           <span class="input-group-text" id="basic-addon1">Date:</span>
                         </div>
-                        <input type="date" class="form-control" placeholder="Date" aria-label="Date" aria-describedby="basic-addon1">
+                        <input type="date" class="form-control" name="cudate" placeholder="Date" aria-label="Date" aria-describedby="basic-addon1">
                       </div>
 
                       <div class="input-group mb-3">
@@ -222,7 +255,7 @@
         <div class="col-6">
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">Sub Total:</span>
+              <span class="input-group-text" id="basic-addon1" onchange="getgst(this)">Sub Total:</span>
             </div>
             <input type="number" class="form-control" id="stotal" name="stotal" placeholder="Sub Total" aria-label="sub total" aria-describedby="basic-addon1">
           </div>
