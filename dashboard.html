@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>dashboard making</title>
+</head>
+<body>
+ <nav class=" sidebar close" >
+    <div class="header">
+        <span class=" text name">Shri Baharat Mandir School Society</span>
+        <i class="bx bx-chevron-right toggle"></i>
+    </div>
+    <div class="menu-items">
+        <ul class="nav-links">
+            <li>
+                <a href="#" ><i class="bx bx-home-alt icon"></i>
+                <span class="text link-name">HOME</span></a>
+            </li>
+            <li class="nav-links">
+                <a href="#" ><i class="bx bx-store-alt icon"></i>
+                <span class="text link-name">SHOPS</span>
+              </a>
+              </li>
+              <li class="nav-links">
+                <a href="#" ><i class="bx bx-user-circle icon"></i>
+                <span class="text link-name">CUSTOMERS</span>
+              </a>
+              </li>
+              <li class="nav-links">
+                <a href="#" ><i class="bx bx-message-alt-dots icon"></i>
+                <span class="text link-name">INVOICE</span>
+              </a>
+              
+        </ul>
+        
+         
+    
+         <ul class="logout-mod">
+          <li class="">
+            <a href="#">
+              <i class="bx bx-log-out icon"></i>
+              <span class="text link-name">Logout</span>
+            </a>
+          </li>
+          </ul>
+          
+          
+        
+
+    </div>
+ </nav>
+    
+</body>
+<script type="text/javascript">
+    const body = document.querySelector("body")
+          sidebar = body.querySelector(".sidebar")
+          toggle = body.querySelector(".toggle")
+      
+    
+          toggle.addEventListener("click" , () =>{
+            sidebar.classList.toggle("close");
+          })
+                      
+    
+    
+    </script>
+</html>

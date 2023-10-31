@@ -3,22 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-    
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Document</title>
     <style>
-      *{
-        margin:0;
-        padding:0;
-        box-sizing:border-box;
-      }
-
-      :root{
+        :root{
         --toggle-color:#DDD;
         --primary-color:#695CFE;
         --primary-color-light:#F6F5FF;
@@ -35,27 +27,23 @@
       }
       body{
         height:100vh;
-        background:var(--body-color);
+        backgroun:var(--body-color);
         transition:var(--tran-02); 
       }
-      
-      .header .header-text .name{
+       .header .header-text {
         font-weight:900;
         font-size:25px;
-      }
-      .sidebar{
+       }
+       .sidebar{
         position:fixed;
         top:0;
         left:0;
         height:100%;
         width:250px;
-        padding:10px 14px;
+        /* padding:10px 14px; */
         background:var(--sidebar-color);
         transition:var(--tran-05);
-        white-space: nowrap;
       }
-      
-    
       .sidebar .header{
         position:relative;
 
@@ -66,8 +54,17 @@
       .sidebar.close .text{
         opacity:0;
       }
+    
+      .sidebar .text{
+        font-size:20px;
+        font-weight:500;
+        color:var(--text-color);
+        transition:var(--tran-04);
+        /* white-space:pre;  */
+        opacity:1;
+      }
       .header .header-text{
-        display:flex;
+        /* display:flex; */
         flex-direction:column;
       }
       .sidebar .header .toggle{
@@ -89,93 +86,50 @@
       .sidebar.close .header .toggle{
       transform:translateY(-50%)
       }
-      .sidebar li{
-        height:50px;
-        margin-top:10px;
-        list-style:none;
-        display:flex;
-        align-items:center;
-      }
-      .sidebar li .icon{
-        font-size:20px;
-        min-width:60px;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-
-      }
-      .sidebar li .icon,
-      .sidebar li .text{
-        color:var(--text-color);
-        transition:var(--tran-02);
-      }
-      .sidebar li a{
-        height:100%;
-        width:100%;
-        display:flex;
-        align-items:center;
-        text-decoration:none;
-        border-radius:6px;
-        transition:var(--tran-04);
+      .nav-pill li span:hover,
+      .nav-pill li a:hover{
+        background-color:rgb(66,66,243);
+        color:white;
       }
       
-      .sidebar li a:hover{
-        background:var(--primary-color);
-      }
-      
-      .sidebar li a:hover .icon,
-      .sidebar li a:hover .text{
-        color:var(--sidebar-color); 
-      }
-      .sidebar .menubar{
-        height:calc(100% - 50px);
-        display:flex;
-        flex-direction:column;
-        justify-content:space-between
-      }
-
     </style>
 </head>
-<body >
-    <nav class="sidebar close">
-      <header>
-        <div class="header">
-        <div class=" text header-text">
-            <span class="name">Shri Bharat Mandir </span>
-            <span class="name">School Society</span>
-        </div>
-        <i class="bx bx-chevron-right toggle"></i>
-        </div>
-     </header>
-     <div class="menubar">
-      <div class="menu">
-       
-        <ul class="menu-link">
-          <li class="nav-link">
-            <a href="#" ><i class="bx bx-home-alt icon"></i>
+<body>
+  <div class="container-fluid sidebar close">
+    <div class="row">
+       <div class="d-flex flex-column justify-content-between col-auto min-vh-100">
+        <div class="mt-4  header">
+            <div class=" text header-text ">
+                <span class="fs-5  name">Shri Baharat Mandir School Society</span>
+            </div>
+            <i class="bx bx-chevron-right toggle"></i>
+        
+        <div class=" mt-4 menubar">
+            <div class="menu mt-4">
+            <ul class=" nav nav-pill flex-column menu-link">
+            <li class=" nav-item my-1 nav-link">
+            <a href="#" class="nav-link "  aria-current="page" ><i class="bx bx-home-alt icon"></i>
             <span class="text nav-text">HOME</span>
           </a>
           </li>
-          <li class="nav-link">
-            <a href="#" ><i class="bx bx-store-alt icon"></i>
+          <li class=" nav-item my-1 nav-link">
+            <a href="#" class="nav-link" aria-current="page" ><i class="bx bx-store-alt icon"></i>
             <span class="text nav-text">SHOPS</span>
           </a>
           </li>
-          <li class="nav-link">
-            <a href="#" ><i class="bx bx-user-circle icon"></i>
+          <li class="nav-item my-1 nav-link">
+            <a href="#" class="nav-link" aria-current="page" ><i class="bx bx-user-circle icon"></i>
             <span class="text nav-text">CUSTOMERS</span>
           </a>
           </li>
-          <li class="nav-link">
-            <a href="#" ><i class="bx bx-message-alt-dots icon"></i>
+          <li class="nav-item my-1 nav-link">
+            <a href="#" class="nav-link" aria-current="page" ><i class="bx bx-message-alt-dots icon"></i>
             <span class="text nav-text">INVOICE</span>
           </a>
           
-        </ul>
-      </div>
-     
-
-     <div class="bottom-content">
+        </div>
+    </div>
+        <div class="bottom-content">
       <li class="">
         <a href="#">
           <i class="bx bx-log-out icon"></i>
@@ -184,13 +138,20 @@
       </li>
       
      </div>
-    </div>
-    </nav>
-      
+        </div>
+       </div>
+
+      </div>
+  </div>
+</body>
 <script type="text/javascript">
 const body = document.querySelector("body")
       sidebar = body.querySelector(".sidebar")
       toggle = body.querySelector(".toggle")
+      searchbar = body.querySelector(".search-bar")
+      modeSwitch = body.querySelector(".toggle-switch")
+      modetext = body.querySelector(".mode-text")
+
       toggle.addEventListener("click" , () =>{
         sidebar.classList.toggle("close");
       })
@@ -198,5 +159,4 @@ const body = document.querySelector("body")
 
 
 </script>
-    </body>
 </html>
