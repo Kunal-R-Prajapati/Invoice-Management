@@ -3,25 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <title>Document</title>
     <?php  require_once("headerlink.php");?>
-    <script>
-        $(document).onclick(function(){
-            $('#mymodal').modal({
-                backdrop:"static",
-                
-            });
-        });
-    </script>
+  
 </head>
 
 <body>
-    <!-- <button class="btn btn-warning"> Add</button> -->
-    <button class="btn btn-warning d-block m-auto" data-toggle="modal" data-target="#mymodal">Add</button>
+<nav class="navbar navbar-expand-lg navbar-light bg-success justif-content-around d-flex justify-content-between">
+		<div class="navbar-brand">
+            <h3>Shri bharat mandir school society</h3>
+		</div>
+	
+        <button class="btn btn-warning d-block m-auto" data-toggle="modal" data-target="#mymodal">Add</button>
     <div class="modal fade" id="mymodal" data-backdrop="static">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable ">
             <div class="modal-content">
@@ -67,8 +68,24 @@
                 <div class="modal-footer">
                     <button class="btn btn-danger" data-dismiss="modal">Close</button>
                         </div></div></div></div>
+			
+        
+        
+        
+        <div class="form-inline">
+				<input type="text" id="myInput" name="" class="form-control" placeholder="search here">
+				<div class="input-group-append">
+					<button class="btn btn-primary">Search <i class="fa fa-search"></i></button>
+				</div> 
+            
 
-<div class="container-fluid">
+			</div>
+	</nav>
+
+    <!-- <button class="btn btn-warning"> Add</button> -->
+
+
+<div class="container-fluid mt-4">
       <div class="row">
         <div class="col-md-12">
          <div class="card"> 
@@ -77,7 +94,9 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-success">
+                     <!-- <input type="text" placeholder="search here" class="form-control mb-3" id="myInput" > -->
+
+                            <table  id="myTable"class="table table-success">
                             <thead>
                                 <TH>SHOP ID</TH>
                                 <TH>shop Address</TH>
@@ -123,5 +142,16 @@
       </div>
     </div>
 </body>
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+
+ </script>
 
 </html>
